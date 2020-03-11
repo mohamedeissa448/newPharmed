@@ -6,7 +6,6 @@ import { routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
-import { FullCalendarModule } from 'ng-fullcalendar';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -24,7 +23,6 @@ import * as $ from 'jquery';
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         RichTextEditorAllModule,
-        FullCalendarModule,
         NgMultiSelectDropDownModule.forRoot(),
         LeafletModule.forRoot(),
         NgxGalleryModule
