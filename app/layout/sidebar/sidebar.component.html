@@ -47,10 +47,18 @@
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
-                            <a [routerLink]="['/admin/dashboard/index']"><i class="icon-home"></i>
+                            <a [routerLink]="['/dashboard/index']"><i class="icon-home"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
+                        <li [ngClass]="{'active':currentActiveMenu == 'sys-setup'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('sys-setup')"><i class="icon-settings"></i>
+                                <span>System Setup</span></a>
+                            <ul *ngIf="currentActiveMenu == 'sys-setup'">
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/sys-setup/manage-routes']">Route</a></li>
+                            </ul>
+                        </li>
+                        
                     </ul>
                 </nav>
             </div>

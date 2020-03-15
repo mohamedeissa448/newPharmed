@@ -1,21 +1,20 @@
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { IndexComponent } from './index/index.component';
+import { DashboardComponent } from './index/index.component';
+
 
 const routes: Routes = [   
     {
         path: '',
-        component: AdminComponent,
         children: [
-            { path: '', redirectTo:'dashboard'},
+            { path: '', redirectTo:'dashboard', pathMatch: 'full' },
             {
                 path: 'dashboard',
                 children: [
                     { path: '', redirectTo: 'index', pathMatch: 'full' },
-                    { path: 'index', component: IndexComponent, data: { title: ':: Lucid Angular :: Dashboard :: Analytical ::' } },
+                    { path: 'index', component: DashboardComponent, data: { title: 'RxP CMS Manager » Dashboard' } },
                 ]
             }
-        ]
+        ] 
     },
     
 ];

@@ -1,15 +1,15 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EChartOption } from 'echarts';
-import { SidebarService } from '../../services/sidebar.service';
+import { SidebarService } from '../../../services/sidebar.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-    selector: 'app-index',
+    selector: 'app-dashboard',
     templateUrl: './index.component.html',
     styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy {
 
     public sidebarVisible: boolean = true;
     public isResizing: boolean = false;

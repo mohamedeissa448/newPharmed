@@ -9,8 +9,14 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { HttpClientModule } from '@angular/common/http'; 
+import { LayoutModule } from './layout/layout.module';
+
+import { SysSetupModule } from './components/sys-setup/sys-setup.module';
+import { DashboardModule } from './components/dashboard/dashboard.module';
 
 import * as $ from 'jquery';
+import { from } from 'rxjs';
 
 @NgModule({
     declarations: [
@@ -18,8 +24,14 @@ import * as $ from 'jquery';
     ],
     imports: [
         BrowserModule,
-        routing,
+        // Pharmed Modules
+        SysSetupModule,
+        DashboardModule, 
+
+        // end of pharmed modules
+        routing,HttpClientModule,
         NgbModule,
+        LayoutModule,
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         RichTextEditorAllModule,
