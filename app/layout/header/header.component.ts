@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter , ChangeDetectorRef} from '@angular/core';
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ThemeService } from '../../services/theme.service';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
 	selector: 'app-header',
@@ -18,11 +19,20 @@ export class HeaderComponent implements OnInit {
 	@Output() toggleSettingDropMenuEvent = new EventEmitter();
 	@Output() toggleNotificationDropMenuEvent = new EventEmitter();
 
-	constructor(private config: NgbDropdownConfig, private themeService: ThemeService) {
+	public sidebarVisible: boolean = true;
+	PageName: any;
+	PageSubName: any;
+	constructor(private config: NgbDropdownConfig, private themeService: ThemeService, private sidebarService: SidebarService,private cdr: ChangeDetectorRef) {
 		config.placement = 'bottom-right';
 	}
-
+	get SelectedMainMenu(): String {
+        return this.sidebarService.currentSelectedMainMenu;
+	}
+	get SelectedSubMenu(): String {
+        return this.sidebarService.currentSelectedSubMenu;
+    }
 	ngOnInit() {
+		
 	}
 
 	toggleSettingDropMenu() {
@@ -35,6 +45,11 @@ export class HeaderComponent implements OnInit {
 
 	toggleSideMenu(){
 		this.themeService.showHideMenu();
+	}
+	toggleFullWidth() {
+		this.sidebarService.toggle();
+		this.sidebarVisible = this.sidebarService.getStatus();
+		this.cdr.detectChanges();
 	}
 
 }

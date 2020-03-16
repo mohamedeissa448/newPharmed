@@ -53,7 +53,7 @@
                         </li>
                         <li [ngClass]="{'active':currentActiveMenu == 'sys-setup'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('sys-setup')"><i class="icon-settings"></i>
-                                <span>System Setup</span></a>
+                                <span>Setup</span></a>
                             <ul *ngIf="currentActiveMenu == 'sys-setup'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/sys-setup/manage-routes']">Route</a></li>
                             </ul>

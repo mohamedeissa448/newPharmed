@@ -85,12 +85,22 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
 	}
 
 	getActiveRoutes() {
+		
 		let segments: Array<string> = this.router.url.split('/');
-		this.currentActiveMenu = segments[2];
-		this.currentActiveSubMenu = segments[3];
+		this.currentActiveMenu = segments[1];
+		this.currentActiveSubMenu = segments[2];
+		this.sidebarService.setcurrentSelectedMainMenu(segments[1]);
+
+		let NameSegments: Array<string> = segments[2].split('-');
+		if(NameSegments[NameSegments.length-1] != "index")
+			this.sidebarService.setcurrentSelectedSubMenu(NameSegments[NameSegments.length-1]);
+		else
+			this.sidebarService.setcurrentSelectedSubMenu("Dashboard");
+
 	}
 
 	activeInactiveMenu($event) {
+		console.log($event.item)
 		if ($event.item && $event.item == this.currentActiveMenu) {
 			this.currentActiveMenu = "";
 		} else {

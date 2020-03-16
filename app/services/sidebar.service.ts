@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class SidebarService {
 
 	public sidebarVisible: boolean = true;
-
+	public currentSelectedMainMenu: any ="";
+	public currentSelectedSubMenu: any ="";
 	constructor() { }
 
 	toggle() {
@@ -15,5 +16,17 @@ export class SidebarService {
 
 	getStatus() {
 		return this.sidebarVisible;
+	}
+	setcurrentSelectedMainMenu(menuName: any){
+		this.currentSelectedMainMenu = menuName;
+	}
+	getcurrentSelectedMainMenu(){
+		return this.currentSelectedMainMenu;
+	}
+	setcurrentSelectedSubMenu(submenuName: any){
+		this.currentSelectedSubMenu = submenuName;
+	}
+	getcurrentSelectedSubMenu(){
+		return this.currentSelectedSubMenu;
 	}
 }
