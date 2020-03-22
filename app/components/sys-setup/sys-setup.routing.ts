@@ -1,3 +1,4 @@
+import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
 import { Forms } from "./forms/forms.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
 import { Routes, RouterModule } from "@angular/router";
@@ -5,6 +6,7 @@ import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 
 import { from } from "rxjs";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
+import { WeekDay } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -34,6 +36,13 @@ const routes: Routes = [
         component: StrengthUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Strength Units"
+        }
+      },
+      {
+        path: "manage-weight-units",
+        component: WeightUnitsComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Weight Units"
         }
       }
     ]
