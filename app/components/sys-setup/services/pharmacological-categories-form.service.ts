@@ -44,7 +44,7 @@ export class PharmacologicalCategoriesFormService {
     this.http.post(
       `${systemSettings.serverURL}/editPharmaceuticalCategory`,
       {
-        row_id: updatedCategory._id,
+        row_id: updatedCategory.Pharmaceutical_Category_Code,
         name: updatedCategory.Pharmaceutical_Category_Name,
         atc_code: updatedCategory.Pharmaceutical_Category_ATC_Code,
         status: updatedCategory.Pharmaceutical_Category_IsActive
