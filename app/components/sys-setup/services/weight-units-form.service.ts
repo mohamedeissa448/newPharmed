@@ -28,7 +28,7 @@ export class WeightUnitsFormService {
     });
   }
   getWeightUnits() {
-    return this.http.get("http://35.234.124.65:5100/getWeightUnits");
+    return this.http.get(`${systemSettings}/getWeightUnits`);
   }
   addWeightUnit(weightUnit) {
     console.log("added", weightUnit);

@@ -1,3 +1,4 @@
+import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
 import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
 import { Forms } from "./forms/forms.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
@@ -43,6 +44,13 @@ const routes: Routes = [
         component: WeightUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Weight Units"
+        }
+      },
+      {
+        path: "manage-volume-units",
+        component: VolumeUnitsComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Volume Units"
         }
       }
     ]

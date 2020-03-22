@@ -1,3 +1,4 @@
+import { VolumeUnitsFormComponent } from "./volume-units/volume-units-form/volume-units-form.component";
 import { WeightUnitsFormComponent } from "./Weight-Units/weight-units-form/weight-units-form.component";
 import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
 import { StrengthUnitsFormComponent } from "./strength-units/strength-units-form/strength-units-form.component";
@@ -27,6 +28,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
+import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
 
 @NgModule({
   imports: [
@@ -60,13 +62,16 @@ import { StrengthUnitsComponent } from "./strength-units/strength-units.componen
     StrengthUnitsComponent,
     StrengthUnitsFormComponent,
     WeightUnitsComponent,
-    WeightUnitsFormComponent
+    WeightUnitsFormComponent,
+    VolumeUnitsComponent,
+    VolumeUnitsFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
     FormsFormComponent,
     StrengthUnitsFormComponent,
-    WeightUnitsFormComponent
+    WeightUnitsFormComponent,
+    VolumeUnitsFormComponent
   ]
 })
 export class SysSetupModule {}
