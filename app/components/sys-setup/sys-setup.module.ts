@@ -1,3 +1,5 @@
+import { SizeUnitsFormComponent } from "./size-units/size-units-form/size-units-form.component";
+import { SizeUnitsComponent } from "./size-units/size-units.component";
 import { VolumeUnitsFormComponent } from "./volume-units/volume-units-form/volume-units-form.component";
 import { WeightUnitsFormComponent } from "./Weight-Units/weight-units-form/weight-units-form.component";
 import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
@@ -64,14 +66,17 @@ import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
     WeightUnitsComponent,
     WeightUnitsFormComponent,
     VolumeUnitsComponent,
-    VolumeUnitsFormComponent
+    VolumeUnitsFormComponent,
+    SizeUnitsComponent,
+    SizeUnitsFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
     FormsFormComponent,
     StrengthUnitsFormComponent,
     WeightUnitsFormComponent,
-    VolumeUnitsFormComponent
+    VolumeUnitsFormComponent,
+    SizeUnitsFormComponent
   ]
 })
 export class SysSetupModule {}
