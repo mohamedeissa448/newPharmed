@@ -1,3 +1,5 @@
+import { MedicalConditionsFormComponent } from "./medical-conditions/medical-conditions-form/medical-conditions-form.component";
+import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
 import { SizeUnitsFormComponent } from "./size-units/size-units-form/size-units-form.component";
 import { SizeUnitsComponent } from "./size-units/size-units.component";
 import { VolumeUnitsFormComponent } from "./volume-units/volume-units-form/volume-units-form.component";
@@ -68,7 +70,9 @@ import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
     VolumeUnitsComponent,
     VolumeUnitsFormComponent,
     SizeUnitsComponent,
-    SizeUnitsFormComponent
+    SizeUnitsFormComponent,
+    MedicalConditionsComponent,
+    MedicalConditionsFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -76,7 +80,8 @@ import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
     StrengthUnitsFormComponent,
     WeightUnitsFormComponent,
     VolumeUnitsFormComponent,
-    SizeUnitsFormComponent
+    SizeUnitsFormComponent,
+    MedicalConditionsFormComponent
   ]
 })
 export class SysSetupModule {}

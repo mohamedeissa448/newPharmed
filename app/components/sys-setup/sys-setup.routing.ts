@@ -1,3 +1,4 @@
+import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
 import { SizeUnitsComponent } from "./size-units/size-units.component";
 import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
 import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
@@ -59,6 +60,13 @@ const routes: Routes = [
         component: SizeUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Size Units"
+        }
+      },
+      {
+        path: "manage-medical-conditions",
+        component: MedicalConditionsComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Medical Conditions"
         }
       }
     ]
