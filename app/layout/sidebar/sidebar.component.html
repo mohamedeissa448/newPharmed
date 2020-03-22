@@ -1,78 +1,164 @@
-<div id="left-sidebar" class="sidebar" *ngIf="sidebarVisible" style="overflow-y:scroll;">
-    <div class="sidebar-scroll">
-        <div class="user-account">
-            <img src="assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
-            <div class="dropdown" ngbDropdown>
-                <span>Welcome,</span>
-                <a href="javascript:void(0);" class="dropdown-toggle user-name" ngbDropdownToggle><strong>Alizee
-                        Thomas</strong></a>
-                <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
-                    <li><a [routerLink]="['/admin/pages/page-profile2']"><i class="icon-user"></i>My Profile</a></li>
-                    <li><a [routerLink]="['/admin/app/app-inbox']"><i class="icon-envelope-open"></i>Messages</a></li>
-                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
-                    <li class="divider"></li>
-                    <li><a [routerLink]="['/authentication/page-login']"><i class="icon-power"></i>Logout</a></li>
-                </ul>
-            </div>
-            <hr>
-            <ul class="row list-unstyled">
-                <li class="col-4">
-                    <small>Sales</small>
-                    <h6>456</h6>
-                </li>
-                <li class="col-4">
-                    <small>Order</small>
-                    <h6>1350</h6>
-                </li>
-                <li class="col-4">
-                    <small>Revenue</small>
-                    <h6>$2.13B</h6>
-                </li>
-            </ul>
-        </div>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'menu'}" (click)="changeNavTab('menu')">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'chat'}" (click)="changeNavTab('chat')"><i
-                        class="icon-book-open"></i></a></li>
-            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'setting'}" (click)="changeNavTab('setting')"><i
-                        class="icon-settings"></i></a></li>
-            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'question'}" (click)="changeNavTab('question')"><i
-                        class="icon-question"></i></a></li>
+<div
+  id="left-sidebar"
+  class="sidebar"
+  *ngIf="sidebarVisible"
+  style="overflow-y:scroll;"
+>
+  <div class="sidebar-scroll">
+    <div class="user-account">
+      <img
+        src="assets/images/user.png"
+        class="rounded-circle user-photo"
+        alt="User Profile Picture"
+      />
+      <div class="dropdown" ngbDropdown>
+        <span>Welcome,</span>
+        <a
+          href="javascript:void(0);"
+          class="dropdown-toggle user-name"
+          ngbDropdownToggle
+          ><strong>Alizee Thomas</strong></a
+        >
+        <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
+          <li>
+            <a [routerLink]="['/admin/pages/page-profile2']"
+              ><i class="icon-user"></i>My Profile</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="['/admin/app/app-inbox']"
+              ><i class="icon-envelope-open"></i>Messages</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0);"
+              ><i class="icon-settings"></i>Settings</a
+            >
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a [routerLink]="['/authentication/page-login']"
+              ><i class="icon-power"></i>Logout</a
+            >
+          </li>
         </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content p-l-0 p-r-0">
-            <div class="tab-pane" id="menu" [ngClass]="{'active':navTab == 'menu' || !navTab}">
-                <nav id="left-sidebar-nav" class="sidebar-nav">
-                    <ul id="main-menu" class="metismenu">
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
-                            <a [routerLink]="['/dashboard/index']"><i class="icon-home"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li [ngClass]="{'active':currentActiveMenu == 'sys-setup'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('sys-setup')"><i class="icon-settings"></i>
-                                <span>Setup</span></a>
-                            <ul *ngIf="currentActiveMenu == 'sys-setup'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/sys-setup/manage-routes']">Route</a></li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </nav>
-            </div>
-            <div class="tab-pane p-l-15 p-r-15" id="Chat" [ngClass]="{'active':navTab == 'chat'}">
-                Second Tab
-
-            </div>
-            <div class="tab-pane p-l-15 p-r-15" id="setting" [ngClass]="{'active':navTab == 'setting'}">
-                Third Tab
-                
-            </div>
-            <div class="tab-pane p-l-15 p-r-15" id="question" [ngClass]="{'active':navTab == 'question'}">
-                Forth Tab
-            </div>
-        </div>
+      </div>
+      <hr />
+      <ul class="row list-unstyled">
+        <li class="col-4">
+          <small>Sales</small>
+          <h6>456</h6>
+        </li>
+        <li class="col-4">
+          <small>Order</small>
+          <h6>1350</h6>
+        </li>
+        <li class="col-4">
+          <small>Revenue</small>
+          <h6>$2.13B</h6>
+        </li>
+      </ul>
     </div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{ active: navTab == 'menu' }"
+          (click)="changeNavTab('menu')"
+          >Menu</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{ active: navTab == 'chat' }"
+          (click)="changeNavTab('chat')"
+          ><i class="icon-book-open"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{ active: navTab == 'setting' }"
+          (click)="changeNavTab('setting')"
+          ><i class="icon-settings"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{ active: navTab == 'question' }"
+          (click)="changeNavTab('question')"
+          ><i class="icon-question"></i
+        ></a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content p-l-0 p-r-0">
+      <div
+        class="tab-pane"
+        id="menu"
+        [ngClass]="{ active: navTab == 'menu' || !navTab }"
+      >
+        <nav id="left-sidebar-nav" class="sidebar-nav">
+          <ul id="main-menu" class="metismenu">
+            <li
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [ngClass]="{ active: currentActiveMenu == 'dashboard' }"
+            >
+              <a [routerLink]="['/dashboard/index']"
+                ><i class="icon-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li [ngClass]="{ active: currentActiveMenu == 'sys-setup' }">
+              <a class="has-arrow" (click)="activeInactiveMenu('sys-setup')"
+                ><i class="icon-settings"></i> <span>Setup</span></a
+              >
+              <ul *ngIf="currentActiveMenu == 'sys-setup'">
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-routes']">Route</a>
+                </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-pharmacological']"
+                    >Pharmacological Categories</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="tab-pane p-l-15 p-r-15"
+        id="Chat"
+        [ngClass]="{ active: navTab == 'chat' }"
+      >
+        Second Tab
+      </div>
+      <div
+        class="tab-pane p-l-15 p-r-15"
+        id="setting"
+        [ngClass]="{ active: navTab == 'setting' }"
+      >
+        Third Tab
+      </div>
+      <div
+        class="tab-pane p-l-15 p-r-15"
+        id="question"
+        [ngClass]="{ active: navTab == 'question' }"
+      >
+        Forth Tab
+      </div>
+    </div>
+  </div>
 </div>
