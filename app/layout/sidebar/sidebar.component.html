@@ -133,6 +133,20 @@
                     >Pharmacological Categories</a
                   >
                 </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-forms']">Forms</a>
+                </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-strength-units']"
+                    >Strength Units</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>

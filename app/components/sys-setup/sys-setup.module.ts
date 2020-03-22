@@ -1,3 +1,6 @@
+import { StrengthUnitsFormComponent } from "./strength-units/strength-units-form/strength-units-form.component";
+import { FormsFormComponent } from "./forms/forms-form/forms-form.component";
+import { Forms } from "./forms/forms.component";
 import { PharmacologicalCategoriesFormComponent } from "./pharmacological-categories/pharmacological-categories-form/pharmacological-categories-form.component";
 import { NgModule } from "@angular/core";
 import { routing } from "./sys-setup.routing";
@@ -21,6 +24,7 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
+import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
 
 @NgModule({
   imports: [
@@ -48,8 +52,16 @@ import { PharmacologicalCategories } from "./pharmacological-categories/pharmaco
   declarations: [
     SysSetupRouteComponent,
     PharmacologicalCategoriesFormComponent,
-    PharmacologicalCategories
+    PharmacologicalCategories,
+    Forms,
+    FormsFormComponent,
+    StrengthUnitsComponent,
+    StrengthUnitsFormComponent
   ],
-  entryComponents: [PharmacologicalCategoriesFormComponent]
+  entryComponents: [
+    PharmacologicalCategoriesFormComponent,
+    FormsFormComponent,
+    StrengthUnitsFormComponent
+  ]
 })
 export class SysSetupModule {}
