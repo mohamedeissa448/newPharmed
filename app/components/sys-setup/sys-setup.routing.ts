@@ -18,6 +18,7 @@ import { DoseUnitComponent } from "./dose-units/dose-units.component";
 import { DurationUnitComponent } from "./duration-units/duration-units.component";
 import { InteractionFoodComponent } from "./interaction-food-list/interaction-food.component";
 import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
+import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
 
 const routes: Routes = [
   {
@@ -131,6 +132,13 @@ const routes: Routes = [
         component: InteractionLabComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Lab Lists Tests"
+        }
+      },
+      {
+        path: "manage-interaction-alcohol",
+        component: InteractionAlcoholComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Alcohols"
         }
       }
     ]

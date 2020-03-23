@@ -1,3 +1,4 @@
+import { InteractionAlcoholFormComponent } from "./interaction-alcohol/interaction-alcohol-form/interaction-alcohol-form.component";
 import { InteractionLabFormComponent } from "./interaction-lab-tests-list/interaction-lab-tests-form/interaction-lab-tests-form.component";
 import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequenctIntervalsFormComponent } from "./frequency-intervals/frequency-intervals-form/frequency-intervals-form.component";
@@ -49,6 +50,7 @@ import { InteractionFoodComponent } from "./interaction-food-list/interaction-fo
 import { InteractionFoodFormComponent } from "./interaction-food-list/interaction-food-form/interaction-food-form.component";
 import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
 import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interaction-herbs-form/interaction-herbs-form.component";
+import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
 
 @NgModule({
   imports: [
@@ -104,7 +106,9 @@ import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interact
     InteractionHerbsComponent,
     InteractionHerbsFormComponent,
     InteractionLabComponent,
-    InteractionLabFormComponent
+    InteractionLabFormComponent,
+    InteractionAlcoholComponent,
+    InteractionAlcoholFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -121,7 +125,8 @@ import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interact
     FrequenctIntervalsFormComponent,
     InteractionFoodFormComponent,
     InteractionHerbsFormComponent,
-    InteractionLabFormComponent
+    InteractionLabFormComponent,
+    InteractionAlcoholFormComponent
   ]
 })
 export class SysSetupModule {}
