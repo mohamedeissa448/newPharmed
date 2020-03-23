@@ -1,6 +1,4 @@
 import { DoseUnitsFormService } from "./../services/dose-units-form.service";
-import { DoseTypesFormService } from "./../services/dosing-types-form.service";
-import { DosingAgeFormService } from "./../services/dosing-age-form.service";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import {
   MatPaginator,

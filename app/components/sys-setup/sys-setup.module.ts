@@ -1,3 +1,5 @@
+import { FrequenctIntervalsFormComponent } from "./frequency-intervals/frequency-intervals-form/frequency-intervals-form.component";
+import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
 import { DoseTypeFormComponent } from "./dose-type/dose-type-form/dose-type-form.component";
 import { DoseTypeComponent } from "./dose-type/dose-type.component";
 import { DosingAgeFormComponent } from "./dosing-age/dosing-age-form/dosing-age-form.component";
@@ -39,6 +41,8 @@ import { StrengthUnitsComponent } from "./strength-units/strength-units.componen
 import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
 import { DoseUnitComponent } from "./dose-units/dose-units.component";
 import { DoseUnitFormComponent } from "./dose-units/dose-units-form/dose-units-form.component";
+import { DurationUnitsFormComponent } from "./duration-units/duration-units-form/duration-units-form.component";
+import { DurationUnitComponent } from "./duration-units/duration-units.component";
 
 @NgModule({
   imports: [
@@ -84,7 +88,11 @@ import { DoseUnitFormComponent } from "./dose-units/dose-units-form/dose-units-f
     DoseTypeComponent,
     DoseTypeFormComponent,
     DoseUnitComponent,
-    DoseUnitFormComponent
+    DoseUnitFormComponent,
+    DurationUnitComponent,
+    DurationUnitsFormComponent,
+    FrequencyIntervalComponent,
+    FrequenctIntervalsFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -96,7 +104,9 @@ import { DoseUnitFormComponent } from "./dose-units/dose-units-form/dose-units-f
     MedicalConditionsFormComponent,
     DosingAgeFormComponent,
     DoseTypeFormComponent,
-    DoseUnitFormComponent
+    DoseUnitFormComponent,
+    DurationUnitsFormComponent,
+    FrequenctIntervalsFormComponent
   ]
 })
 export class SysSetupModule {}

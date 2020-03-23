@@ -1,3 +1,4 @@
+import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
 import { DoseTypeComponent } from "./dose-type/dose-type.component";
 import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
 import { SizeUnitsComponent } from "./size-units/size-units.component";
@@ -13,6 +14,7 @@ import { StrengthUnitsComponent } from "./strength-units/strength-units.componen
 import { WeekDay } from "@angular/common";
 import { DosingAgeComponent } from "./dosing-age/dosing-age.component";
 import { DoseUnitComponent } from "./dose-units/dose-units.component";
+import { DurationUnitComponent } from "./duration-units/duration-units.component";
 
 const routes: Routes = [
   {
@@ -91,6 +93,20 @@ const routes: Routes = [
         component: DoseUnitComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Dose Units"
+        }
+      },
+      {
+        path: "manage-duration-units",
+        component: DurationUnitComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Duration Units"
+        }
+      },
+      {
+        path: "manage-frequency-intervals",
+        component: FrequencyIntervalComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Frequency Intervals"
         }
       }
     ]
