@@ -51,6 +51,8 @@ import { InteractionFoodFormComponent } from "./interaction-food-list/interactio
 import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
 import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interaction-herbs-form/interaction-herbs-form.component";
 import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
+import { PregnancyCategoryComponent } from "./pregnancy-category/pregnancy-category.component";
+import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-category-form/pregnancy-category-form.component";
 
 @NgModule({
   imports: [
@@ -108,7 +110,9 @@ import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-a
     InteractionLabComponent,
     InteractionLabFormComponent,
     InteractionAlcoholComponent,
-    InteractionAlcoholFormComponent
+    InteractionAlcoholFormComponent,
+    PregnancyCategoryComponent,
+    PregnancyCategoryFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -126,7 +130,8 @@ import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-a
     InteractionFoodFormComponent,
     InteractionHerbsFormComponent,
     InteractionLabFormComponent,
-    InteractionAlcoholFormComponent
+    InteractionAlcoholFormComponent,
+    PregnancyCategoryFormComponent
   ]
 })
 export class SysSetupModule {}

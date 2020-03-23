@@ -19,6 +19,7 @@ import { DurationUnitComponent } from "./duration-units/duration-units.component
 import { InteractionFoodComponent } from "./interaction-food-list/interaction-food.component";
 import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
 import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
+import { PregnancyCategoryComponent } from "./pregnancy-category/pregnancy-category.component";
 
 const routes: Routes = [
   {
@@ -139,6 +140,13 @@ const routes: Routes = [
         component: InteractionAlcoholComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Alcohols"
+        }
+      },
+      {
+        path: "manage-pregnancy-category",
+        component: PregnancyCategoryComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Pregnancy Categories"
         }
       }
     ]
