@@ -1,3 +1,7 @@
+import { DoseTypeFormComponent } from "./dose-type/dose-type-form/dose-type-form.component";
+import { DoseTypeComponent } from "./dose-type/dose-type.component";
+import { DosingAgeFormComponent } from "./dosing-age/dosing-age-form/dosing-age-form.component";
+import { DosingAgeComponent } from "./dosing-age/dosing-age.component";
 import { MedicalConditionsFormComponent } from "./medical-conditions/medical-conditions-form/medical-conditions-form.component";
 import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
 import { SizeUnitsFormComponent } from "./size-units/size-units-form/size-units-form.component";
@@ -33,6 +37,8 @@ import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
 import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
+import { DoseUnitComponent } from "./dose-units/dose-units.component";
+import { DoseUnitFormComponent } from "./dose-units/dose-units-form/dose-units-form.component";
 
 @NgModule({
   imports: [
@@ -72,7 +78,13 @@ import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
     SizeUnitsComponent,
     SizeUnitsFormComponent,
     MedicalConditionsComponent,
-    MedicalConditionsFormComponent
+    MedicalConditionsFormComponent,
+    DosingAgeComponent,
+    DosingAgeFormComponent,
+    DoseTypeComponent,
+    DoseTypeFormComponent,
+    DoseUnitComponent,
+    DoseUnitFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -81,7 +93,10 @@ import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
     WeightUnitsFormComponent,
     VolumeUnitsFormComponent,
     SizeUnitsFormComponent,
-    MedicalConditionsFormComponent
+    MedicalConditionsFormComponent,
+    DosingAgeFormComponent,
+    DoseTypeFormComponent,
+    DoseUnitFormComponent
   ]
 })
 export class SysSetupModule {}

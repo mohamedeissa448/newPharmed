@@ -179,6 +179,30 @@
                     >Medical Conditions</a
                   >
                 </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-dosing-age']"
+                    >Dosing Age Categories</a
+                  >
+                </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-dose-types']"
+                    >Dose Types</a
+                  >
+                </li>
+                <li
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  <a [routerLink]="['/sys-setup/manage-dose-units']"
+                    >Dose Units</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>

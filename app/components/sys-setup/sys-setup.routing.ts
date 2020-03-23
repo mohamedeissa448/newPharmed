@@ -1,3 +1,4 @@
+import { DoseTypeComponent } from "./dose-type/dose-type.component";
 import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
 import { SizeUnitsComponent } from "./size-units/size-units.component";
 import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
@@ -10,6 +11,8 @@ import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 import { from } from "rxjs";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
 import { WeekDay } from "@angular/common";
+import { DosingAgeComponent } from "./dosing-age/dosing-age.component";
+import { DoseUnitComponent } from "./dose-units/dose-units.component";
 
 const routes: Routes = [
   {
@@ -67,6 +70,27 @@ const routes: Routes = [
         component: MedicalConditionsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Medical Conditions"
+        }
+      },
+      {
+        path: "manage-dosing-age",
+        component: DosingAgeComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Dosing Age Categories"
+        }
+      },
+      {
+        path: "manage-dose-types",
+        component: DoseTypeComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Dose Types"
+        }
+      },
+      {
+        path: "manage-dose-units",
+        component: DoseUnitComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Dose Units"
         }
       }
     ]
