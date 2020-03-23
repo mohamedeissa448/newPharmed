@@ -15,6 +15,8 @@ import { WeekDay } from "@angular/common";
 import { DosingAgeComponent } from "./dosing-age/dosing-age.component";
 import { DoseUnitComponent } from "./dose-units/dose-units.component";
 import { DurationUnitComponent } from "./duration-units/duration-units.component";
+import { InteractionFoodComponent } from "./interaction-food-list/interaction-food.component";
+import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
 
 const routes: Routes = [
   {
@@ -107,6 +109,20 @@ const routes: Routes = [
         component: FrequencyIntervalComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Frequency Intervals"
+        }
+      },
+      {
+        path: "manage-interaction-food",
+        component: InteractionFoodComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Food Lists"
+        }
+      },
+      {
+        path: "manage-interaction-herbs",
+        component: InteractionHerbsComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Herbs Lists"
         }
       }
     ]

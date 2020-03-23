@@ -12,46 +12,42 @@ export class InteractionFoodFormService {
   constructor(private http: HttpClient) {
     this.form = new FormGroup({
       _id: new FormControl(),
-      UsageFrequenIntervalUnit_Code: new FormControl(""),
-      UsageFrequenIntervalUnit_Name: new FormControl("", [Validators.required]),
-      UsageFrequenIntervalUnit_Description: new FormControl(""),
-      UsageFrequenIntervalUnit_IsActive: new FormControl("")
+      Food_Code: new FormControl(""),
+      Food_Name: new FormControl("", [Validators.required]),
+      Food_Description: new FormControl(""),
+      Food_IsActive: new FormControl("")
     });
   }
   initializeFormGroup() {
     this.form.setValue({});
   }
-  getFrequencyIntervals() {
+  getFoodLists() {
     return this.http.get(`${systemSettings.serverURL}/getFoods`);
   }
-  addFrequencyInterval(FrequencyInterval) {
+  addFoodList(FrequencyInterval) {
     console.log("added", FrequencyInterval);
     return this.http.post(
       `${systemSettings.serverURL}/addFood`,
       FrequencyInterval //need modification
     );
   }
-  updateFrequencyInterval(updatedFrequencyInterval) {
-    if (updatedFrequencyInterval.UsageAge_IsActive == false)
-      updatedFrequencyInterval.UsageAge_IsActive = 0;
-    console.log("updated", updatedFrequencyInterval);
+  updateFoodList(updatedFoodList) {
+    if (updatedFoodList.UsageAge_IsActive == false)
+      updatedFoodList.UsageAge_IsActive = 0;
+    console.log("updated", updatedFoodList);
     return this.http.post(
       `${systemSettings.serverURL}/editFood`,
-      updatedFrequencyInterval //need modification
+      updatedFoodList //need modification
     );
   }
-  popualteForm(FrequencyInterval) {
-    console.log("FrequencyInterval", FrequencyInterval);
+  popualteForm(foodList) {
+    console.log("foodList", foodList);
     this.form.setValue({
-      _id: FrequencyInterval._id,
-      UsageFrequenIntervalUnit_Code:
-        FrequencyInterval.UsageFrequenIntervalUnit_Code,
-      UsageFrequenIntervalUnit_Name:
-        FrequencyInterval.UsageFrequenIntervalUnit_Name || "",
-      UsageFrequenIntervalUnit_Description:
-        FrequencyInterval.UsageFrequenIntervalUnit_Description || "",
-      UsageFrequenIntervalUnit_IsActive:
-        FrequencyInterval.UsageFrequenIntervalUnit_IsActive || ""
+      _id: foodList._id,
+      Food_Code: foodList.Food_Code,
+      Food_Name: foodList.Food_Name || "",
+      Food_Description: foodList.Food_Description || "",
+      Food_IsActive: foodList.Food_IsActive || ""
     });
   }
 }

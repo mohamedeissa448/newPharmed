@@ -43,6 +43,10 @@ import { DoseUnitComponent } from "./dose-units/dose-units.component";
 import { DoseUnitFormComponent } from "./dose-units/dose-units-form/dose-units-form.component";
 import { DurationUnitsFormComponent } from "./duration-units/duration-units-form/duration-units-form.component";
 import { DurationUnitComponent } from "./duration-units/duration-units.component";
+import { InteractionFoodComponent } from "./interaction-food-list/interaction-food.component";
+import { InteractionFoodFormComponent } from "./interaction-food-list/interaction-food-form/interaction-food-form.component";
+import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
+import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interaction-herbs-form/interaction-herbs-form.component";
 
 @NgModule({
   imports: [
@@ -92,7 +96,11 @@ import { DurationUnitComponent } from "./duration-units/duration-units.component
     DurationUnitComponent,
     DurationUnitsFormComponent,
     FrequencyIntervalComponent,
-    FrequenctIntervalsFormComponent
+    FrequenctIntervalsFormComponent,
+    InteractionFoodComponent,
+    InteractionFoodFormComponent,
+    InteractionHerbsComponent,
+    InteractionHerbsFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -106,7 +114,9 @@ import { DurationUnitComponent } from "./duration-units/duration-units.component
     DoseTypeFormComponent,
     DoseUnitFormComponent,
     DurationUnitsFormComponent,
-    FrequenctIntervalsFormComponent
+    FrequenctIntervalsFormComponent,
+    InteractionFoodFormComponent,
+    InteractionHerbsFormComponent
   ]
 })
 export class SysSetupModule {}
