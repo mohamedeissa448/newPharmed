@@ -1,3 +1,4 @@
+import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
 import { DoseTypeComponent } from "./dose-type/dose-type.component";
 import { MedicalConditionsComponent } from "./medical-conditions/medical-conditions.component";
@@ -123,6 +124,13 @@ const routes: Routes = [
         component: InteractionHerbsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Herbs Lists"
+        }
+      },
+      {
+        path: "manage-interaction-lab-tests",
+        component: InteractionLabComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Lab Lists Tests"
         }
       }
     ]

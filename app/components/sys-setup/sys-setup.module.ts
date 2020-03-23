@@ -1,3 +1,5 @@
+import { InteractionLabFormComponent } from "./interaction-lab-tests-list/interaction-lab-tests-form/interaction-lab-tests-form.component";
+import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequenctIntervalsFormComponent } from "./frequency-intervals/frequency-intervals-form/frequency-intervals-form.component";
 import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
 import { DoseTypeFormComponent } from "./dose-type/dose-type-form/dose-type-form.component";
@@ -100,7 +102,9 @@ import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interact
     InteractionFoodComponent,
     InteractionFoodFormComponent,
     InteractionHerbsComponent,
-    InteractionHerbsFormComponent
+    InteractionHerbsFormComponent,
+    InteractionLabComponent,
+    InteractionLabFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -116,7 +120,8 @@ import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interact
     DurationUnitsFormComponent,
     FrequenctIntervalsFormComponent,
     InteractionFoodFormComponent,
-    InteractionHerbsFormComponent
+    InteractionHerbsFormComponent,
+    InteractionLabFormComponent
   ]
 })
 export class SysSetupModule {}

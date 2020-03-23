@@ -36,9 +36,9 @@ export class InteractionHerbsComponent implements OnInit {
 
   ngOnInit() {
     this.InteractionHerbsFormService.getHerbsLists().subscribe(
-      (durationUnits: []) => {
-        console.log("durationUnits", durationUnits);
-        this.herbsLists = new MatTableDataSource(durationUnits);
+      (herbsLists: []) => {
+        console.log("herbsLists", herbsLists);
+        this.herbsLists = new MatTableDataSource(herbsLists);
         this.herbsLists.sort = this.sort;
         this.herbsLists.paginator = this.paginator;
       }
