@@ -1,3 +1,5 @@
+import { RoutesFormComponent } from "./routes/routes-form/routes-form.component";
+import { RoutesComponent } from "./routes/routes.component";
 import { LactationCategoryFormComponent } from "./lactation-category/lactation-category-form/lactation-category-form.component";
 import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionAlcoholFormComponent } from "./interaction-alcohol/interaction-alcohol-form/interaction-alcohol-form.component";
@@ -40,7 +42,6 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { SysSetupRouteComponent } from "./routes/manage-routes.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
 import { VolumeUnitsComponent } from "./volume-units/volume-units.component";
@@ -55,9 +56,12 @@ import { InteractionHerbsFormComponent } from "./interaction-herbs-list/interact
 import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
 import { PregnancyCategoryComponent } from "./pregnancy-category/pregnancy-category.component";
 import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-category-form/pregnancy-category-form.component";
+import { SysSetupComponent } from "./sys-setup/sys-setup.component";
+import { LayoutModule } from "./../../layout/layout.module";
 
 @NgModule({
   imports: [
+    LayoutModule,
     BrowserModule,
     CommonModule,
     MatDatepickerModule,
@@ -80,9 +84,10 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
     MatButtonModule
   ],
   declarations: [
-    SysSetupRouteComponent,
     PharmacologicalCategoriesFormComponent,
     PharmacologicalCategories,
+    RoutesComponent,
+    RoutesFormComponent,
     Forms,
     FormsFormComponent,
     StrengthUnitsComponent,
@@ -116,10 +121,12 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
     PregnancyCategoryComponent,
     PregnancyCategoryFormComponent,
     LactationCategoryComponent,
-    LactationCategoryFormComponent
+    LactationCategoryFormComponent,
+    SysSetupComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
+    RoutesFormComponent,
     FormsFormComponent,
     StrengthUnitsFormComponent,
     WeightUnitsFormComponent,

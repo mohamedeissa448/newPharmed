@@ -17,6 +17,7 @@ import { DashboardModule } from "./components/dashboard/dashboard.module";
 
 //import * as $ from 'jquery';
 import { from } from "rxjs";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent],

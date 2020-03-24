@@ -1,3 +1,4 @@
+import { SysSetupComponent } from "./sys-setup/sys-setup.component";
 import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
@@ -9,8 +10,6 @@ import { WeightUnitsComponent } from "./Weight-Units/weight-units.component";
 import { Forms } from "./forms/forms.component";
 import { PharmacologicalCategories } from "./pharmacological-categories/pharmacological-categories.component";
 import { Routes, RouterModule } from "@angular/router";
-import { SysSetupRouteComponent } from "./routes/manage-routes.component";
-
 import { from } from "rxjs";
 import { StrengthUnitsComponent } from "./strength-units/strength-units.component";
 import { WeekDay } from "@angular/common";
@@ -21,22 +20,25 @@ import { InteractionFoodComponent } from "./interaction-food-list/interaction-fo
 import { InteractionHerbsComponent } from "./interaction-herbs-list/interaction-herbs.component";
 import { InteractionAlcoholComponent } from "./interaction-alcohol/interaction-alcohol.component";
 import { PregnancyCategoryComponent } from "./pregnancy-category/pregnancy-category.component";
+import { RoutesComponent } from "./routes/routes.component";
+import { DashboardComponent } from "../dashboard/dashboard/dashboard.component";
 
 const routes: Routes = [
   {
     path: "sys-setup",
+    component: DashboardComponent,
     children: [
-      {
-        path: "manage-routes",
-        component: SysSetupRouteComponent,
-        data: { title: "RxP CMS Manager » System Setup » Routes" }
-      },
       {
         path: "manage-pharmacological",
         component: PharmacologicalCategories,
         data: {
           title: "RxP CMS Manager » System Setup » Pharmacological Categories"
         }
+      },
+      {
+        path: "manage-routes",
+        component: RoutesComponent,
+        data: { title: "RxP CMS Manager » System Setup » Routes" }
       },
       {
         path: "manage-forms",
