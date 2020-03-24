@@ -1,3 +1,5 @@
+import { LactationCategoryFormComponent } from "./lactation-category/lactation-category-form/lactation-category-form.component";
+import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionAlcoholFormComponent } from "./interaction-alcohol/interaction-alcohol-form/interaction-alcohol-form.component";
 import { InteractionLabFormComponent } from "./interaction-lab-tests-list/interaction-lab-tests-form/interaction-lab-tests-form.component";
 import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
@@ -112,7 +114,9 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
     InteractionAlcoholComponent,
     InteractionAlcoholFormComponent,
     PregnancyCategoryComponent,
-    PregnancyCategoryFormComponent
+    PregnancyCategoryFormComponent,
+    LactationCategoryComponent,
+    LactationCategoryFormComponent
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
@@ -131,7 +135,8 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
     InteractionHerbsFormComponent,
     InteractionLabFormComponent,
     InteractionAlcoholFormComponent,
-    PregnancyCategoryFormComponent
+    PregnancyCategoryFormComponent,
+    LactationCategoryFormComponent
   ]
 })
 export class SysSetupModule {}

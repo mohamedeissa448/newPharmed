@@ -1,3 +1,4 @@
+import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
 import { DoseTypeComponent } from "./dose-type/dose-type.component";
@@ -147,6 +148,13 @@ const routes: Routes = [
         component: PregnancyCategoryComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Pregnancy Categories"
+        }
+      },
+      {
+        path: "manage-lactation-category",
+        component: LactationCategoryComponent,
+        data: {
+          title: "RxP CMS Manager » System Setup » Lactation Categories"
         }
       }
     ]
