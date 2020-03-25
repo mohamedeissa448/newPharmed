@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { PageLoginComponent } from "./page-login/page-login.component";
@@ -25,6 +26,6 @@ import { FormsModule } from "@angular/forms";
     PageIsErrorComponent,
     PageTryLaterComponent
   ],
-  imports: [CommonModule, routing, RouterModule, FormsModule]
+  imports: [CommonModule, routing, RouterModule, FormsModule, HttpClientModule]
 })
 export class AuthenticationModule {}

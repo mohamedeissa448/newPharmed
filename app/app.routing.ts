@@ -1,4 +1,5 @@
-﻿import { Routes, RouterModule } from "@angular/router";
+﻿import { AuthGuardService } from "./authentication/services/auth-guard.service";
+import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
 
 export const routes: Routes = [
@@ -9,6 +10,7 @@ export const routes: Routes = [
       import("../app/components/sys-setup/sys-setup.module").then(
         m => m.SysSetupModule
       )
+    //canActivate: [AuthGuardService]
   },
   {
     path: "dashboard",
