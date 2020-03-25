@@ -1,3 +1,4 @@
+import { RoutesFormComponent } from "./routes/routes-form/routes-form.component";
 import { LactationCategoryFormComponent } from "./lactation-category/lactation-category-form/lactation-category-form.component";
 import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionAlcoholFormComponent } from "./interaction-alcohol/interaction-alcohol-form/interaction-alcohol-form.component";
@@ -83,6 +84,8 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
     SysSetupRouteComponent,
     PharmacologicalCategoriesFormComponent,
     PharmacologicalCategories,
+    SysSetupRouteComponent,
+    RoutesFormComponent,
     Forms,
     FormsFormComponent,
     StrengthUnitsComponent,
@@ -120,6 +123,7 @@ import { PregnancyCategoryFormComponent } from "./pregnancy-category/pregnancy-c
   ],
   entryComponents: [
     PharmacologicalCategoriesFormComponent,
+    RoutesFormComponent,
     FormsFormComponent,
     StrengthUnitsFormComponent,
     WeightUnitsFormComponent,
