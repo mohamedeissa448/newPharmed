@@ -8,7 +8,7 @@ import { CanActivate, Router } from "@angular/router";
 export class SysSetupAuthGuardService implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
   canActivate(): boolean {
-    if (this.authService.currentUser.roles.includes("sys-setu")) {
+    if (this.authService.currentUser.roles.includes("sys-setup")) {
       return true;
     }
     this.router.navigate(["/authentication/page-403"]);

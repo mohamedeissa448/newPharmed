@@ -32,7 +32,7 @@ export class AuthService {
       );
   }
   logOut() {
-    this.router.navigate(["dashboard/index"]);
+    this.router.navigate(["authentication/page-login"]);
     localStorage.removeItem("token");
   }
   isLogedIn() {
