@@ -15,7 +15,7 @@ import { RoutesFormComponent } from "./routes-form/routes-form.component";
   styleUrls: ["./manage-routes.component.css"]
 })
 export class SysSetupRouteComponent implements OnInit {
-  private forms;
+  private routes;
   data;
   searchKey: string;
   private displayedColumns: string[] = [
@@ -33,11 +33,14 @@ export class SysSetupRouteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.initialize();
+  }
+  initialize() {
     this.RoutesService.getRoutes().subscribe((routes: []) => {
       console.log("routes", routes);
-      this.forms = new MatTableDataSource(routes);
-      this.forms.sort = this.sort;
-      this.forms.paginator = this.paginator;
+      this.routes = new MatTableDataSource(routes);
+      this.routes.sort = this.sort;
+      this.routes.paginator = this.paginator;
     });
   }
   onAdd() {
@@ -64,6 +67,7 @@ export class SysSetupRouteComponent implements OnInit {
     this.applyFilter();
   }
   applyFilter() {
-    if (this.searchKey) this.forms.filter = this.searchKey.trim().toLowerCase();
+    if (this.searchKey)
+      this.routes.filter = this.searchKey.trim().toLowerCase();
   }
 }

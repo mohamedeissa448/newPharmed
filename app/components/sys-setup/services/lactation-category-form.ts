@@ -26,10 +26,10 @@ export class LactationCategoryFormService {
   }
   addLactationCategory(lactationCategory) {
     console.log("added", lactationCategory);
-    return this.http.post(
-      `${systemSettings.serverURL}/addBreastFeeding`,
-      lactationCategory //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/addBreastFeeding`, {
+      BreastFeeding_Name: lactationCategory.BreastFeeding_Name,
+      BreastFeeding_Description: lactationCategory.BreastFeeding_Description
+    });
   }
   updateLactationCategory(updatedLactationCategory) {
     if (updatedLactationCategory.BreastFeeding_IsActive == false)

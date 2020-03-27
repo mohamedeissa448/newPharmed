@@ -28,19 +28,27 @@ export class FrequencyIntervalsFormService {
   }
   addFrequencyInterval(FrequencyInterval) {
     console.log("added", FrequencyInterval);
-    return this.http.post(
-      `${systemSettings.serverURL}/addUsageFrequenInterval`,
-      FrequencyInterval //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addUsageFrequenInterval`, {
+        name: FrequencyInterval.UsageFrequenIntervalUnit_Name,
+        desc: FrequencyInterval.UsageFrequenIntervalUnit_Description
+      })
+      .subscribe(x => {});
   }
   updateFrequencyInterval(updatedFrequencyInterval) {
     if (updatedFrequencyInterval.UsageAge_IsActive == false)
       updatedFrequencyInterval.UsageAge_IsActive = 0;
     console.log("updated", updatedFrequencyInterval);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageFrequenInterval`,
-      updatedFrequencyInterval //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editUsageFrequenInterval`, {
+        name: updatedFrequencyInterval.UsageFrequenIntervalUnit_Name,
+        code: updatedFrequencyInterval.UsageFrequenIntervalUnit_Code,
+        desc: updatedFrequencyInterval.UsageFrequenIntervalUnit_Description,
+        concestatus: updatedFrequencyInterval.UsageFrequenIntervalUnit_IsActive,
+        row_id: updatedFrequencyInterval.UsageFrequenIntervalUnit_Code,
+        status: updatedFrequencyInterval.UsageFrequenIntervalUnit_IsActive
+      })
+      .subscribe(x => {});
   }
   popualteForm(FrequencyInterval) {
     console.log("FrequencyInterval", FrequencyInterval);

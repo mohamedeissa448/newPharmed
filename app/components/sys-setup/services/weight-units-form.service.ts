@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { systemSettings } from "../../../app-config";
+import { WeightUnitsComponent } from "../Weight-Units/weight-units.component";
 
 @Injectable({
   providedIn: "root"
@@ -33,21 +34,24 @@ export class WeightUnitsFormService {
   addWeightUnit(weightUnit) {
     console.log("added", weightUnit);
     return this.http
-      .post(
-        `${systemSettings}/addWeightUnits`,
-        weightUnit //need modification
-      )
+      .post(`${systemSettings}/addWeightUnits`, {
+        name: weightUnit.WeightUnit_Name,
+        desc: weightUnit.WeightUnit_Description
+      })
       .subscribe(x => {});
   }
   updateWeightUnit(updatedWeightUnit) {
     if (updatedWeightUnit.WeightUnit_IsActive == false)
       updatedWeightUnit.WeightUnit_IsActive = 0;
     console.log("updated", updatedWeightUnit);
-    return this.http
-      .post(
-        `${systemSettings}/editWeightUnits`,
-        updatedWeightUnit //need modification
-      )
+    this.http
+      .post(`${systemSettings.serverURL}/editWeightUnits`, {
+        name: updatedWeightUnit.WeightUnit_Name,
+        code: updatedWeightUnit.WeightUnit_Code,
+        desc: updatedWeightUnit.WeightUnit_Description,
+        status: updatedWeightUnit.WeightUnit_IsActive,
+        row_id: updatedWeightUnit.WeightUnit_Code
+      })
       .subscribe(x => {});
   }
   popualteForm(weightUnit) {

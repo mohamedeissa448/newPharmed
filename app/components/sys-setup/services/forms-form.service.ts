@@ -1,7 +1,7 @@
+import { systemSettings } from "./../../../app-config";
 import { Injectable } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-import { systemSettings } from "../../../app-config";
 @Injectable({
   providedIn: "root"
 })
@@ -22,12 +22,18 @@ export class FormsFormService {
   }
 
   getForms() {
-    return this.http.get("http://35.234.124.65:5100/getForm");
+    return this.http.get(`${systemSettings.serverURL}/getForm`);
   }
   addForm(form) {
     console.log("added", form);
     return this.http
-      .post(`${systemSettings.serverURL}/addForm`, form) //need modification
+      .post(`${systemSettings.serverURL}/addForm`, {
+        name: form.Form_Name,
+        desc: form.Form_Description,
+        cd: form.Form_Cd,
+        cddt: form.Form_Cddt,
+        cdprev: form.Form_CdPrev
+      }) //need modification
       .subscribe(x => {
         console.log(x);
       });
@@ -36,7 +42,16 @@ export class FormsFormService {
     if (updatedForm.Form_IsActive == false) updatedForm.Form_IsActive = 0;
     console.log("updated", updatedForm);
     return this.http
-      .post(`${systemSettings.serverURL}/editForm`, updatedForm)
+      .post(`${systemSettings.serverURL}/editForm`, {
+        name: updatedForm.Form_Name,
+        code: updatedForm.Form_Code,
+        row_id: updatedForm.Form_Code,
+        desc: updatedForm.Form_Description,
+        cd: updatedForm.Form_Cd,
+        cddt: updatedForm.Form_Cddt,
+        cdprev: updatedForm.Form_CdPrev,
+        status: updatedForm.Form_IsActive
+      })
       .subscribe(x => {
         console.log(x);
       });

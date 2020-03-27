@@ -33,7 +33,7 @@ export class PharmacologicalCategoriesFormService {
         name: category.Pharmaceutical_Category_Name,
         atc_code: category.Pharmaceutical_Category_ATC_Code,
         status: category.Pharmaceutical_Category_IsActive
-      } //need modification
+      }
     );
   }
   updateCategory(updatedCategory) {

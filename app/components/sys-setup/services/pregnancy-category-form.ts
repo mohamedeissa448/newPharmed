@@ -26,19 +26,16 @@ export class PregnancyCategoryFormService {
   }
   addPregnancyCategorie(pregnancyCategory) {
     console.log("added", pregnancyCategory);
-    return this.http.post(
-      `${systemSettings.serverURL}/addPregnancy`,
-      pregnancyCategory //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/addPregnancy`, {
+      Pregnancy_Name: pregnancyCategory.Pregnancy_Name,
+      Pregnancy_Description: pregnancyCategory.Pregnancy_Description
+    });
   }
   updatePregnancyCategorie(updatedPregnancyCategory) {
     if (updatedPregnancyCategory.Alcohol_IsActive == false)
       updatedPregnancyCategory.Alcohol_IsActive = 0;
     console.log("updated", updatedPregnancyCategory);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageDuration`, //very strange
-      updatedPregnancyCategory //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/editUsageDuration`, {});
   }
   popualteForm(pregnancyCategory) {
     console.log("pregnancy", pregnancyCategory);

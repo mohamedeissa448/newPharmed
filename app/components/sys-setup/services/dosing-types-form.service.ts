@@ -26,21 +26,31 @@ export class DoseTypesFormService {
   }
   addDoseType(dosing) {
     console.log("added", dosing);
-    return this.http.post(
-      `${systemSettings.serverURL}/addUsageDoseType`,
-      dosing //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addUsageDoseType`, {
+        name: dosing.UsageDoseType_Name,
+        desc: dosing.UsageDoseType_Description
+      })
+      .subscribe(x => {});
   }
   updateDoseType(updatedDosingType) {
     if (updatedDosingType.UsageAge_IsActive == false)
       updatedDosingType.UsageAge_IsActive = 0;
     console.log("updated", updatedDosingType);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageDoseType`,
-      updatedDosingType //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editUsageDoseType`, {
+        name: updatedDosingType.UsageDoseType_Name,
+        code: updatedDosingType.UsageDoseType_Code,
+        desc: updatedDosingType.UsageDoseType_Description,
+        dosetypestatus:
+          updatedDosingType.UsageDoseType_IsActive == 1 ? true : false,
+        row_id: updatedDosingType.UsageDoseType_Code,
+        status: updatedDosingType.UsageDoseType_IsActive
+      })
+      .subscribe(x => {});
   }
   popualteForm(dosing) {
+    dosing.UsageDoseType_IsActive == true ? 1 : 0;
     console.log("dosing", dosing);
     this.form.setValue({
       _id: dosing._id,

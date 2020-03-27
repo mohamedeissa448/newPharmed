@@ -43,7 +43,11 @@
   <ng-container matColumnDef="Active">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Active</th>
     <td mat-cell *matCellDef="let element">
-      <input type="checkbox" disabled="disabled" checked="checked" />
+      <input
+        type="checkbox"
+        disabled="disabled"
+        [checked]="element.SizeUnit_IsActive == 1 ? true : false"
+      />
     </td>
   </ng-container>
 

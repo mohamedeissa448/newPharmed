@@ -25,10 +25,10 @@ export class SizeUnitsFormService {
   addSizeUnit(sizeUnit) {
     console.log("added", sizeUnit);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/addSizeUnits`,
-        sizeUnit //need modification
-      )
+      .post(`${systemSettings.serverURL}/addSizeUnits`, {
+        name: sizeUnit.SizeUnit_Name,
+        desc: sizeUnit.SizeUnit_Description
+      })
       .subscribe(x => {});
   }
   updateSizeUnit(updatedSizeUnit) {
@@ -36,10 +36,13 @@ export class SizeUnitsFormService {
       updatedSizeUnit.VolumeUnit_IsActive = 0;
     console.log("updated", updatedSizeUnit);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/editSizeUnits`,
-        updatedSizeUnit //need modification
-      )
+      .post(`${systemSettings.serverURL}/editSizeUnits`, {
+        name: updatedSizeUnit.SizeUnit_Name,
+        code: updatedSizeUnit.SizeUnit_Code,
+        desc: updatedSizeUnit.SizeUnit_Description,
+        status: updatedSizeUnit.SizeUnit_IsActive,
+        row_id: updatedSizeUnit.SizeUnit_Code
+      })
       .subscribe(x => {});
   }
   popualteForm(SizeUnit) {

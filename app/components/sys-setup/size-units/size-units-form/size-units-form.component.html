@@ -18,6 +18,13 @@
       />
       <mat-error>Please enter a description</mat-error>
     </mat-form-field>
+    <mat-slide-toggle
+      *ngIf="title.includes('Edit')"
+      matInput
+      formControlName="SizeUnit_IsActive"
+    >
+      Size Unit Status</mat-slide-toggle
+    >
   </mat-dialog-content>
 
   <mat-dialog-actions>

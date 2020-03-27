@@ -1,6 +1,8 @@
+import { systemSettings } from "./../../../app-config";
 import { Injectable } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
+import { SysSetupRouteComponent } from "../routes/manage-routes.component";
 @Injectable({
   providedIn: "root"
 })
@@ -21,22 +23,36 @@ export class RoutesFormService {
   }
 
   getRoutes() {
-    return this.http.get("http://35.234.124.65:5100/getRoute");
+    return this.http.get(`${systemSettings.serverURL}/getRoute`);
   }
   addRoute(route) {
     console.log("added", route);
-    /* return this.http.post(
-      "http://35.234.124.65:5100/addRoute",
-      route //need modification
-    );*/
+    return this.http
+      .post(`${systemSettings.serverURL}/addRoute`, {
+        name: route.Route_Name,
+        desc: route.Route_Description,
+        cd: route.Route_Cd,
+        cddt: route.Route_Cddt,
+        cdprev: route.Route_CdPrev
+      })
+      .subscribe(z => {});
   }
   updateRoute(updateRoute) {
     if (updateRoute.Route_IsActive == false) updateRoute.Route_IsActive = 0;
     console.log("updated", updateRoute);
-    /**
-     * this.http.post(
-      "http://35.234.124.65:5100/editRoute",updateRoute)
-     */
+
+    this.http
+      .post(`${systemSettings.serverURL}/editRoute`, {
+        row_id: updateRoute.Route_Code,
+        name: updateRoute.Route_Name,
+        code: updateRoute.Route_Code,
+        desc: updateRoute.Route_Description,
+        cd: updateRoute.Route_Cd,
+        cddt: updateRoute.Route_Cddt,
+        cdprev: updateRoute.Route_CdPrev,
+        status: updateRoute.Route_IsActive
+      })
+      .subscribe(x => {});
   }
   popualteForm(route) {
     console.log("route", route);

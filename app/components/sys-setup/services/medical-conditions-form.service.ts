@@ -31,10 +31,14 @@ export class MedicalConditionsFormService {
   addMedicalCondition(condition) {
     console.log("added", condition);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/addMedicalCondition`,
-        { data: condition } //need modification
-      )
+      .post(`${systemSettings.serverURL}/addMedicalCondition`, {
+        name: condition.MedicalCondition_Name,
+        desc: condition.MedicalCondition_Description,
+        icd9: condition.MedicalCondition_ICD9cm,
+        icd10: condition.MedicalCondition_ICD10cm,
+        icd10am: condition.MedicalCondition_ICD10cmAM,
+        icd11: condition.MedicalCondition_ICD11cm
+      })
       .subscribe(x => {});
   }
   updateMedicalCondition(updatedCondition) {
@@ -42,10 +46,16 @@ export class MedicalConditionsFormService {
       updatedCondition.MedicalCondition_IsActive = 0;
     console.log("updated", updatedCondition);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/editMedicalCondition`,
-        updatedCondition //need modification
-      )
+      .post(`${systemSettings.serverURL}/editMedicalCondition`, {
+        name: updatedCondition.MedicalCondition_Name,
+        desc: updatedCondition.MedicalCondition_Description,
+        status: updatedCondition.MedicalCondition_IsActive,
+        icd9: updatedCondition.MedicalCondition_ICD9cm,
+        icd10: updatedCondition.MedicalCondition_ICD10cm,
+        icd10am: updatedCondition.MedicalCondition_ICD10cm,
+        icd11: updatedCondition.MedicalCondition_ICD11cm,
+        row_id: updatedCondition.MedicalCondition_Code
+      })
       .subscribe(x => {});
     console.log("updated", updatedCondition);
   }

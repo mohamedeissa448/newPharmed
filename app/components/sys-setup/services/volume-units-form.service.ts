@@ -33,10 +33,10 @@ export class VolumeUnitsFormService {
   addVolumeUnit(VolumeUnit) {
     console.log("added", VolumeUnit);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/addVolumeUnits`,
-        VolumeUnit //need modification
-      )
+      .post(`${systemSettings.serverURL}/addVolumeUnits`, {
+        name: VolumeUnit.VolumeUnit_Name,
+        desc: VolumeUnit.VolumeUnit_Description
+      })
       .subscribe(x => {});
   }
   updateVolumeUnit(updatedVolumeUnit) {
@@ -44,10 +44,13 @@ export class VolumeUnitsFormService {
       updatedVolumeUnit.VolumeUnit_IsActive = 0;
     console.log("updated", updatedVolumeUnit);
     return this.http
-      .post(
-        `${systemSettings.serverURL}/editVolumeUnits`,
-        updatedVolumeUnit //need modification
-      )
+      .post(`${systemSettings.serverURL}/editVolumeUnits`, {
+        name: updatedVolumeUnit.VolumeUnit_Name,
+        code: updatedVolumeUnit.VolumeUnit_Code,
+        desc: updatedVolumeUnit.VolumeUnit_Description,
+        status: updatedVolumeUnit.VolumeUnit_IsActive,
+        row_id: updatedVolumeUnit.VolumeUnit_Code
+      })
       .subscribe(x => {});
   }
   popualteForm(VolumeUnit) {

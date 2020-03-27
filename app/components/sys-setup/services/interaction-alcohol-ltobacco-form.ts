@@ -26,19 +26,23 @@ export class InteractionAlcoholFormService {
   }
   addAlcohol(Alcohol) {
     console.log("added", Alcohol);
-    return this.http.post(
-      `${systemSettings.serverURL}/addAlcohol`,
-      Alcohol //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/addAlcohol`, {
+      Alcohol_Name: Alcohol.Alcohol_Name,
+      Alcohol_Description: Alcohol.Alcohol_Description
+    });
   }
   updateAlcohol(updatedAlcohol) {
     if (updatedAlcohol.Alcohol_IsActive == false)
       updatedAlcohol.Alcohol_IsActive = 0;
     console.log("updated", updatedAlcohol);
-    return this.http.post(
-      `${systemSettings.serverURL}/editAlcohol`,
-      updatedAlcohol //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editAlcohol`, {
+        Alcohol_Code: updatedAlcohol.Alcohol_Code,
+        Alcohol_Name: updatedAlcohol.Alcohol_Name,
+        Alcohol_IsActive: updatedAlcohol.Alcohol_IsActive,
+        Alcohol_Description: updatedAlcohol.Alcohol_Description
+      })
+      .subscribe(x => {});
   }
   popualteForm(Alcohol) {
     console.log("Alcohol", Alcohol);

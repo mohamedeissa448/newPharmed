@@ -26,19 +26,27 @@ export class DurationUnitsFormService {
   }
   addDurationUnit(durationUnit) {
     console.log("added", durationUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/addUsageDuration`,
-      durationUnit //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addUsageDuration`, {
+        name: durationUnit.UsageDoseDurationUnit_Name,
+        desc: durationUnit.UsageDoseDurationUnit_Description
+      })
+      .subscribe(x => {});
   }
   updateDurationUnit(updatedDurationUnit) {
     if (updatedDurationUnit.UsageAge_IsActive == false)
       updatedDurationUnit.UsageAge_IsActive = 0;
     console.log("updated", updatedDurationUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageDuration`,
-      updatedDurationUnit //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editUsageDuration`, {
+        name: updatedDurationUnit.UsageDoseDurationUnit_Name,
+        code: updatedDurationUnit.UsageDoseDurationUnit_Code,
+        desc: updatedDurationUnit.UsageDoseDurationUnit_Description,
+        DurationUnitstatus: updatedDurationUnit.UsageDoseDurationUnit_IsActive,
+        row_id: updatedDurationUnit.UsageDoseDurationUnit_Code,
+        status: updatedDurationUnit.UsageDoseDurationUnit_IsActive
+      })
+      .subscribe(x => {});
   }
   popualteForm(durationUnit) {
     console.log("durationUnit", durationUnit);

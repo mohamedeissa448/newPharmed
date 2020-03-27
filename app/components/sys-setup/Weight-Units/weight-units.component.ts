@@ -33,6 +33,9 @@ export class WeightUnitsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.initialize();
+  }
+  initialize() {
     this.weightUnitService.getWeightUnits().subscribe((units: []) => {
       console.log("units", units);
       this.weightUnits = new MatTableDataSource(units);

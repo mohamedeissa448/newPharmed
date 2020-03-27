@@ -27,12 +27,12 @@ export class DoseUnitFormComponent implements OnInit {
   onSubmit() {
     if (this.doseUnitsFormService.form.valid) {
       //on adding category
-      if (this.title === "Add New Dose Type") {
+      if (this.title === "Add New Dose Unit") {
         this.doseUnitsFormService.addDoseUnit(
           this.doseUnitsFormService.form.value
         ); /*.subscribe(() => {});*/
         this.notificationService.success(":: Added Successfully");
-      } else if (this.title === "Edit Dose Type") {
+      } else if (this.title === "Edit Dose Unit") {
         //update dosing
         this.doseUnitsFormService.updateDoseUnit(
           this.doseUnitsFormService.form.value
