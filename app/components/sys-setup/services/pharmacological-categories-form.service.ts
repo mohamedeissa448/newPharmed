@@ -31,7 +31,8 @@ export class PharmacologicalCategoriesFormService {
       `${systemSettings.serverURL}/addPharmaceuticalCategory`,
       {
         name: category.Pharmaceutical_Category_Name,
-        atc_code: category.Pharmaceutical_Category_ATC_Code
+        atc_code: category.Pharmaceutical_Category_ATC_Code,
+        status: category.Pharmaceutical_Category_IsActive
       } //need modification
     ).subscribe(function (data: any){
     });
