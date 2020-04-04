@@ -103,3 +103,7 @@ mat-slide-toggle {
   /*form status*/
   margin-left: 2em;
 }
+/********** authentication Forms ***/
+.form-control.ng-invalid.ng-touched {
+  border: 2px solid red;
+}

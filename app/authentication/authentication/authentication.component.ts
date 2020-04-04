@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { Title } from "@angular/platform-browser";
@@ -40,4 +41,46 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
+=======
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+
+@Component({
+	selector: 'app-authentication',
+	templateUrl: './authentication.component.html',
+	styleUrls: ['./authentication.component.css']
+})
+export class AuthenticationComponent implements OnInit, OnDestroy {
+
+    private ngUnsubscribe = new Subject();
+
+	constructor(private router: Router, private activatedRoute: ActivatedRoute, private titleService: Title) { }
+
+	ngOnInit() {
+		this.router.events
+			.filter((event) => event instanceof NavigationEnd)
+			.map(() => this.activatedRoute)
+			.map((route) => {
+				while (route.firstChild) route = route.firstChild;
+				return route;
+			})
+			.filter((route) => route.outlet === 'primary')
+            .mergeMap((route) => route.data)
+            .pipe(takeUntil(this.ngUnsubscribe))
+			.subscribe((event) => this.titleService.setTitle(event['title']));
+    }
+    
+    ngOnDestroy() {
+        this.ngUnsubscribe.next();
+        this.ngUnsubscribe.complete();
+    }
+
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 }

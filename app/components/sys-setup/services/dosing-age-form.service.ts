@@ -26,21 +26,31 @@ export class DosingAgeFormService {
   }
   addDosingAge(dosing) {
     console.log("added", dosing);
-    return this.http.post(
-      `${systemSettings.serverURL}/addUsageAge`,
-      dosing //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addUsageAge`, {
+        name: dosing.UsageAge_Name,
+        desc: dosing.UsageAge_Description
+      })
+      .subscribe(x => {});
   }
+
   updateDosingAge(updatedDosingAge) {
     if (updatedDosingAge.UsageAge_IsActive == false)
       updatedDosingAge.UsageAge_IsActive = 0;
     console.log("updated", updatedDosingAge);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageAge`,
-      updatedDosingAge //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editUsageAge`, {
+        name: updatedDosingAge.UsageAge_Name,
+        code: updatedDosingAge.UsageAge_Code,
+        desc: updatedDosingAge.UsageAge_Description,
+        dosingtostatus: updatedDosingAge.UsageAge_IsActive == 1 ? true : false,
+        row_id: updatedDosingAge.UsageAge_Code,
+        status: updatedDosingAge.UsageAge_IsActive
+      })
+      .subscribe(x => {});
   }
   popualteForm(dosing) {
+    dosing.UsageAge_IsActive == true ? 1 : 0;
     console.log("dosing", dosing);
     this.form.setValue({
       _id: dosing._id,

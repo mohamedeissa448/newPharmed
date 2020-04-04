@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { HttpClientModule } from "@angular/common/http";
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { PageLoginComponent } from "./page-login/page-login.component";
@@ -10,7 +14,10 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { PageForbiddonErrorComponent } from "./page-forbiddon-error/page-forbiddon-error.component";
 import { PageIsErrorComponent } from "./page-is-error/page-is-error.component";
 import { PageTryLaterComponent } from "./page-try-later/page-try-later.component";
+<<<<<<< HEAD
 //import { PagesModule } from '../pages/pages.module';
+=======
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 
@@ -26,6 +33,7 @@ import { FormsModule } from "@angular/forms";
     PageIsErrorComponent,
     PageTryLaterComponent
   ],
+<<<<<<< HEAD
   imports: [
     CommonModule,
     routing,
@@ -33,5 +41,8 @@ import { FormsModule } from "@angular/forms";
     RouterModule,
     FormsModule
   ]
+=======
+  imports: [CommonModule, routing, RouterModule, FormsModule, HttpClientModule]
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 })
 export class AuthenticationModule {}

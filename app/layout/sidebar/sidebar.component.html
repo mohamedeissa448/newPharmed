@@ -5,7 +5,7 @@
   style="overflow-y:scroll;"
 >
   <div class="sidebar-scroll">
-    <div class="user-account">
+    <div class="user-account" *ngIf="authService.isLogedIn()">
       <img
         src="assets/images/user.png"
         class="rounded-circle user-photo"
@@ -17,7 +17,7 @@
           href="javascript:void(0);"
           class="dropdown-toggle user-name"
           ngbDropdownToggle
-          ><strong>Alizee Thomas</strong></a
+          ><strong>{{ authService.currentUser.name }}</strong></a
         >
         <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
           <li>
@@ -36,7 +36,7 @@
             >
           </li>
           <li class="divider"></li>
-          <li>
+          <li (click)="authService.logOut()">
             <a [routerLink]="['/authentication/page-login']"
               ><i class="icon-power"></i>Logout</a
             >
@@ -114,7 +114,13 @@
                 <span>Dashboard</span>
               </a>
             </li>
-            <li [ngClass]="{ active: currentActiveMenu == 'sys-setup' }">
+            <li
+              *ngIf="
+                authService.isLogedIn() &&
+                authService.currentUser.roles.includes('sys-setup')
+              "
+              [ngClass]="{ active: currentActiveMenu == 'sys-setup' }"
+            >
               <a class="has-arrow" (click)="activeInactiveMenu('sys-setup')"
                 ><i class="icon-settings"></i> <span>Setup</span></a
               >
@@ -133,6 +139,7 @@
                 >
                   <a [routerLink]="['/sys-setup/manage-routes']">Routes</a>
                 </li>
+
                 <li
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"

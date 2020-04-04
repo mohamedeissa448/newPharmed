@@ -34,21 +34,25 @@ export class PharmacologicalCategoriesFormService {
         atc_code: category.Pharmaceutical_Category_ATC_Code,
         status: category.Pharmaceutical_Category_IsActive
       } //need modification
-    );
+    ).subscribe(function (data: any){
+    });
   }
   updateCategory(updatedCategory) {
     if (updatedCategory.Pharmaceutical_Category_IsActive == false)
       updatedCategory.Pharmaceutical_Category_IsActive = 0;
-    console.log("updated", updatedCategory);
-
-    this.http.post(
-      `${systemSettings.serverURL}/editPharmaceuticalCategory`,
+      let datatosend = 
       {
         row_id: updatedCategory.Pharmaceutical_Category_Code,
         name: updatedCategory.Pharmaceutical_Category_Name,
         atc_code: updatedCategory.Pharmaceutical_Category_ATC_Code,
         status: updatedCategory.Pharmaceutical_Category_IsActive
-      } //n
+      };
+      console.log(datatosend);
+      this.http.post(
+        `${systemSettings.serverURL}/editPharmaceuticalCategory`,datatosend
+        //n
+      ).subscribe(function (data: any){
+      }
     );
   }
   popualteForm(category) {

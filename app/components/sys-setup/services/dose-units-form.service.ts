@@ -26,19 +26,28 @@ export class DoseUnitsFormService {
   }
   addDoseUnit(doseUnit) {
     console.log("added", doseUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/addUsageDoseUnit`,
-      doseUnit //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addUsageDoseUnit`, {
+        name: doseUnit.UsageDoseUnit_Name,
+        desc: doseUnit.UsageDoseUnit_Description
+      })
+      .subscribe(x => {});
   }
   updateDoseUnit(updatedDoseUnit) {
     if (updatedDoseUnit.UsageAge_IsActive == false)
       updatedDoseUnit.UsageAge_IsActive = 0;
     console.log("updated", updatedDoseUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/editUsageDoseUnit`,
-      updatedDoseUnit //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editUsageDoseUnit`, {
+        name: updatedDoseUnit.UsageDoseUnit_Name,
+        code: updatedDoseUnit.UsageDoseUnit_Code,
+        desc: updatedDoseUnit.UsageDoseUnit_Description,
+        status: updatedDoseUnit.UsageDoseUnit_IsActive,
+        row_id: updatedDoseUnit.UsageDoseUnit_Code,
+        doseUnitstatus:
+          updatedDoseUnit.UsageDoseUnit_IsActive == 1 ? true : false
+      })
+      .subscribe(x => {});
   }
   popualteForm(doseUnit) {
     console.log("doseUnit", doseUnit);

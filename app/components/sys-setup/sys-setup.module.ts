@@ -1,5 +1,8 @@
 import { RoutesFormComponent } from "./routes/routes-form/routes-form.component";
+<<<<<<< HEAD
 import { RoutesComponent } from "./routes/routes.component";
+=======
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 import { LactationCategoryFormComponent } from "./lactation-category/lactation-category-form/lactation-category-form.component";
 import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionAlcoholFormComponent } from "./interaction-alcohol/interaction-alcohol-form/interaction-alcohol-form.component";
@@ -86,7 +89,11 @@ import { LayoutModule } from "./../../layout/layout.module";
   declarations: [
     PharmacologicalCategoriesFormComponent,
     PharmacologicalCategories,
+<<<<<<< HEAD
     RoutesComponent,
+=======
+    SysSetupRouteComponent,
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
     RoutesFormComponent,
     Forms,
     FormsFormComponent,

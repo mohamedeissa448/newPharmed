@@ -20,23 +20,26 @@ export class StrengthUnitsFormService {
   }
 
   getStrengthUnits() {
-    return this.http.get("http://35.234.124.65:5100/getStrengthUnits");
+    return this.http.get(`${systemSettings.serverURL}/getStrengthUnits`);
   }
   addStrengthUnit(strengthUnit) {
     console.log("added", strengthUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/addStrengthUnits`,
-      strengthUnit //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/addStrengthUnits`, {
+      name: strengthUnit.StrengthUnit_Name,
+      desc: strengthUnit.StrengthUnit_Description
+    });
   }
   updateStrengthUnit(updatedStrengthUnit) {
     if (updatedStrengthUnit.StrengthUnit_IsActive == false)
       updatedStrengthUnit.StrengthUnit_IsActive = 0;
     console.log("updated", updatedStrengthUnit);
-    return this.http.post(
-      `${systemSettings.serverURL}/editStrengthUnits`,
-      updatedStrengthUnit //need modification
-    );
+    return this.http.post(`${systemSettings.serverURL}/editStrengthUnits`, {
+      name: updatedStrengthUnit.StrengthUnit_Name,
+      code: updatedStrengthUnit.StrengthUnit_Code,
+      desc: updatedStrengthUnit.StrengthUnit_Description,
+      status: updatedStrengthUnit.StrengthUnit_IsActive,
+      row_id: updatedStrengthUnit.StrengthUnit_Code
+    });
   }
   popualteForm(strengthUnit) {
     console.log("strengthUnit", strengthUnit);

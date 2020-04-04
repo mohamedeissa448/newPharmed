@@ -26,19 +26,25 @@ export class InteractionLabFormService {
   }
   addFoodList(labList) {
     console.log("added", labList);
-    return this.http.post(
-      `${systemSettings.serverURL}/addLabTest`,
-      labList //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addLabTest`, {
+        LabTest_Name: labList.LabTest_Name,
+        LabTest_Description: labList.LabTest_Description
+      })
+      .subscribe(x => {});
   }
   updateHerbsList(updatedLabList) {
     if (updatedLabList.LabTest_IsActive == false)
       updatedLabList.LabTest_IsActive = 0;
     console.log("updated", updatedLabList);
-    return this.http.post(
-      `${systemSettings.serverURL}/editLabTest`,
-      updatedLabList //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editLabTest`, {
+        LabTest_Code: updatedLabList.LabTest_Code,
+        LabTest_Name: updatedLabList.LabTest_Name,
+        LabTest_IsActive: updatedLabList.LabTest_IsActive,
+        LabTest_Description: updatedLabList.LabTest_Description
+      })
+      .subscribe(x => {});
   }
   popualteForm(labList) {
     console.log("labList", labList);

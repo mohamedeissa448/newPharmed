@@ -26,19 +26,25 @@ export class InteractionHerbsFormService {
   }
   addFoodList(herbsList) {
     console.log("added", herbsList);
-    return this.http.post(
-      `${systemSettings.serverURL}/addHerbs`,
-      herbsList //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addHerbs`, {
+        Herbs_Name: herbsList.Herbs_Name,
+        Herbs_Description: herbsList.Herbs_Description
+      })
+      .subscribe(x => {});
   }
   updateHerbsList(updatedHerbsList) {
     if (updatedHerbsList.UsageAge_IsActive == false)
       updatedHerbsList.UsageAge_IsActive = 0;
     console.log("updated", updatedHerbsList);
-    return this.http.post(
-      `${systemSettings.serverURL}/editHerbs`,
-      updatedHerbsList //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editHerbs`, {
+        Herbs_Code: updatedHerbsList.Herbs_Code,
+        Herbs_Name: updatedHerbsList.Herbs_Name,
+        Herbs_IsActive: updatedHerbsList.Herbs_IsActive,
+        Herbs_Description: updatedHerbsList.Herbs_Description
+      })
+      .subscribe(x => {});
   }
   popualteForm(herbsList) {
     console.log("herbsList", herbsList);

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { SysSetupComponent } from "./sys-setup/sys-setup.component";
+=======
+import { SysSetupAuthGuardService } from "./../../authentication/services/sys-setup-auth-guard.service";
+import { AuthGuardService } from "./../../authentication/services/auth-guard.service";
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
 import { LactationCategoryComponent } from "./lactation-category/lactation-category.component";
 import { InteractionLabComponent } from "./interaction-lab-tests-list/interaction-lab-tests.component";
 import { FrequencyIntervalComponent } from "./frequency-intervals/frequency-intervals.component";
@@ -29,11 +34,21 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+<<<<<<< HEAD
+=======
+        path: "manage-routes",
+        component: SysSetupRouteComponent,
+        data: { title: "RxP CMS Manager » System Setup » Routes" },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
+      },
+      {
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
         path: "manage-pharmacological",
         component: PharmacologicalCategories,
         data: {
           title: "RxP CMS Manager » System Setup » Pharmacological Categories"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-routes",
@@ -45,119 +60,136 @@ const routes: Routes = [
         component: Forms,
         data: {
           title: "RxP CMS Manager » System Setup » Forms"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-strength-units",
         component: StrengthUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Strength Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-weight-units",
         component: WeightUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Weight Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-volume-units",
         component: VolumeUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Volume Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-size-units",
         component: SizeUnitsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Size Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-medical-conditions",
         component: MedicalConditionsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Medical Conditions"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-dosing-age",
         component: DosingAgeComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Dosing Age Categories"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-dose-types",
         component: DoseTypeComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Dose Types"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-dose-units",
         component: DoseUnitComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Dose Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-duration-units",
         component: DurationUnitComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Duration Units"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-frequency-intervals",
         component: FrequencyIntervalComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Frequency Intervals"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-interaction-food",
         component: InteractionFoodComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Food Lists"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-interaction-herbs",
         component: InteractionHerbsComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Herbs Lists"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-interaction-lab-tests",
         component: InteractionLabComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Lab Lists Tests"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-interaction-alcohol",
         component: InteractionAlcoholComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Alcohols"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-pregnancy-category",
         component: PregnancyCategoryComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Pregnancy Categories"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       },
       {
         path: "manage-lactation-category",
         component: LactationCategoryComponent,
         data: {
           title: "RxP CMS Manager » System Setup » Lactation Categories"
-        }
+        },
+        canActivate: [AuthGuardService, SysSetupAuthGuardService]
       }
     ]
   }

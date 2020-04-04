@@ -26,19 +26,25 @@ export class InteractionFoodFormService {
   }
   addFoodList(FrequencyInterval) {
     console.log("added", FrequencyInterval);
-    return this.http.post(
-      `${systemSettings.serverURL}/addFood`,
-      FrequencyInterval //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/addFood`, {
+        Food_Name: FrequencyInterval.Food_Name,
+        Food_Description: FrequencyInterval.Food_Description
+      })
+      .subscribe(x => {});
   }
   updateFoodList(updatedFoodList) {
     if (updatedFoodList.UsageAge_IsActive == false)
       updatedFoodList.UsageAge_IsActive = 0;
     console.log("updated", updatedFoodList);
-    return this.http.post(
-      `${systemSettings.serverURL}/editFood`,
-      updatedFoodList //need modification
-    );
+    return this.http
+      .post(`${systemSettings.serverURL}/editFood`, {
+        Food_Code: updatedFoodList.Food_Code,
+        Food_Name: updatedFoodList.Food_Name,
+        Food_IsActive: updatedFoodList.Food_IsActive,
+        Food_Description: updatedFoodList.Food_Description
+      })
+      .subscribe(x => {});
   }
   popualteForm(foodList) {
     console.log("foodList", foodList);

@@ -218,13 +218,25 @@
               </li>
             </ul>
           </li>
+<<<<<<< HEAD
           <li>
+=======
+          <li *ngIf="!authService.isLogedIn()">
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
             <a
               [routerLink]="['/authentication/page-login']"
               class="icon-menu d-none d-sm-block"
               ><i class="icon-login"></i
             ></a>
           </li>
+<<<<<<< HEAD
+=======
+          <li *ngIf="authService.isLogedIn()" (click)="authService.logOut()">
+            <a class="icon-menu d-none d-sm-block"
+              ><i class="icon-logout"></i
+            ></a>
+          </li>
+>>>>>>> c9052aa9c6378af8486bc058cb77d758dee2b734
         </ul>
       </div>
     </div>

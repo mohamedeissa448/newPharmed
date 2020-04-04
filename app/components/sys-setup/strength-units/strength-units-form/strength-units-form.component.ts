@@ -28,15 +28,15 @@ export class StrengthUnitsFormComponent implements OnInit {
     if (this.strengthUnitsService.form.valid) {
       //on adding strength unit
       if (this.title === "Add New Strength Unit") {
-        this.strengthUnitsService.addStrengthUnit(
-          this.strengthUnitsService.form.value
-        ); /*.subscribe(() => {});*/
+        this.strengthUnitsService
+          .addStrengthUnit(this.strengthUnitsService.form.value)
+          .subscribe(() => {});
         this.notificationService.success(":: Added Successfully");
       } else if (this.title === "Edit Strength Unit") {
         //update strength unit
-        this.strengthUnitsService.updateStrengthUnit(
-          this.strengthUnitsService.form.value
-        );
+        this.strengthUnitsService
+          .updateStrengthUnit(this.strengthUnitsService.form.value)
+          .subscribe(() => {});
         this.notificationService.success(":: Updated Successfully");
       }
       this.strengthUnitsService.form.reset();
